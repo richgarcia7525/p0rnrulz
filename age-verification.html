@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Verification</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Link to the existing CSS -->
+</head>
+<body>
+    <div class="age-verification-container">
+        <!-- Neon Flickering Title -->
+        <h1 class="site-title">
+            <span class="zero">Welcome to p</span><span class="flicker">0</span>rnrulz
+        </h1>
+
+        <!-- Instruction Text -->
+        <p class="instruction-text">Please verify your age and select your preference</p>
+
+        <!-- Neon Buttons -->
+        <div class="age-options">
+            <button class="neon-button" onclick="goToSection('straight')">Straight</button>
+            <button class="neon-button" onclick="goToSection('gay')">Gay</button>
+            <button class="neon-button" onclick="goToSection('trans')">Trans</button>
+        </div>
+
+        <!-- Age confirmation -->
+        <p class="confirmation-text">By entering, you confirm that you are over 18 years of age.</p>
+    </div>
+
+    <script>
+        function goToSection(section) {
+            localStorage.setItem('ageVerified', 'true');
+            localStorage.setItem('userSection', section);
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
+
+

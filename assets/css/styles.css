@@ -1,0 +1,325 @@
+/* General Body and Settings */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background: #0f0f0f;
+    color: white;
+    font-family: 'Arial', sans-serif; /* Default readable font */
+}
+
+/* Age Verification Page Styles */
+.age-verification-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Flickering Title (same as in the Hero section) */
+.site-title {
+    font-size: 5rem;
+    color: #ff0054;
+    text-shadow: 0px 0px 20px rgba(255, 0, 84, 0.7);
+    font-family: 'Russo One', sans-serif; /* Bold title font */
+}
+    
+
+.flicker {
+    animation: neon-flicker 2s infinite alternate;
+    color: #ffea00;
+}
+
+/* Instruction Text - Neon Green */
+.instruction-text, .confirmation-text {
+    font-size: 1.5rem;
+    color: #00ff00;
+    margin: 20px 0;
+    font-family: 'Open Sans', sans-serif; /* Readable body font */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6);
+}
+
+/* Buttons styled to match the hero section */
+.neon-button {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 35px;
+    border-radius: 8px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 0, 84, 0.7), 0 0 40px rgba(255, 0, 84, 0.5), 0 0 60px rgba(255, 0, 84, 0.3);
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.neon-button:hover {
+    background: #ff0054;
+    box-shadow: 0 0 30px rgba(255, 0, 84, 1), 0 0 60px rgba(255, 0, 84, 0.9), 0 0 90px rgba(255, 0, 84, 0.8);
+}
+
+/* Age Options Layout */
+.age-options {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Keyframes for Flicker Effect */
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+      text-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00, 0 0 30px #ffea00;
+    }
+    20%, 24%, 55% {
+      opacity: 0.8;
+      text-shadow: 0 0 10px #ffea00, 0 0 15px #ffea00;
+    }
+    22%, 26% {
+      opacity: 0.4;
+      text-shadow: 0 0 5px #ffea00;
+    }
+}
+
+/* Comet Trail */
+.comet-trail {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #0f0; /* Bright neon green */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.6), 0 0 45px rgba(0, 255, 0, 0.4); /* Neon Green Glow */
+    pointer-events: none;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease-out, transform 0.5s ease-out;
+}
+
+.comet-trail.active {
+    opacity: 1;
+}
+
+.comet-trail.fade {
+    opacity: 0;
+    transform: scale(0.5); /* Shrink as it fades */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100vw;
+    background: url('/assets/images/graffiti.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+/* Import the DotZeroExtrude font */
+@font-face {
+    font-family: 'DotZeroExtrude';
+    src: url('/assets/fonts/Skratch_Punk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Import the DotZeroBasic font for the tagline */
+@font-face {
+    font-family: 'DotZeroBasic';
+    src: url('/assets/fonts/Skratch_Punk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hero h1, .tagline {
+    font-family: 'Skratch_Punk', sans-serif;
+} 
+
+/* Hero Section Title */
+.hero h1 {
+    font-family: 'Skratch_Punk', sans-serif;
+    font-size: 6.5rem; /* Keep it large but readable */
+    color: #ff0054;
+    text-shadow: 0 0 30px #ff0054, 0 0 50px rgba(255, 0, 84, 1);
+    letter-spacing: 0.2rem; /* Improve spacing between letters */
+    line-height: 1.1; /* Slightly tighter line height */
+}
+
+/* Tagline */
+.tagline {
+    font-family: 'Skratch_Punk', sans-serif; /* The previous font */
+    font-size: 2.5rem;
+    color: #ffea00;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.6);
+    animation: neon-flicker 3s infinite alternate;
+    margin-top: 10px;
+}
+
+/* Make the "0" in p0rnrulz stand out */
+.flicker {
+    font-family: 'DotZeroBasic', sans-serif;
+    font-size: 7rem; /* Make the '0' slightly larger for emphasis */
+    color: #ffea00; /* Bright yellow color */
+    text-shadow: 0 0 30px #ffea00, 0 0 50px rgba(255, 255, 0, 1);
+    animation: neon-flicker 2s infinite;
+}
+
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.8;
+    }
+    22%, 26% {
+        opacity: 0.4;
+    }
+}
+
+/* Hero Buttons */
+.hero-btn {
+    font-family: 'Skratch_Punk', sans-serif; /* The previous font */
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 35px;
+    border-radius: 8px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 0, 84, 0.7), 0 0 40px rgba(255, 0, 84, 0.5), 0 0 60px rgba(255, 0, 84, 0.3);
+    transition: 0.4s ease;
+}
+.hero-btn:hover {
+    background: #ff0054;
+    box-shadow: 0 0 40px rgba(255, 0, 84, 1), 0 0 70px rgba(255, 0, 84, 1);
+}
+
+/* Video Section Styles */
+.videos-section {
+    padding: 50px 0;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.video-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+video {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#video-list {
+    padding: 20px;
+}
+
+#videos-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.video-card {
+    background-color: #1a1a1a;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 0, 84, 0.5);
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+/* Category Titles */
+.category-title {
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+}
+
+.hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+}
+
+.hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+
+
+
+
+

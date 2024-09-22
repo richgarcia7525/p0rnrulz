@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p0rnrulz - Trending</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <script>
+        const userSection = localStorage.getItem('userSection');
+    
+        if (!userSection) {
+            window.location.href = 'age-verification.html';
+        } else {
+            // Fetch and display trending videos based on user section
+            document.addEventListener('DOMContentLoaded', function() {
+                const sectionTitle = document.querySelector('.section-title h2');
+                const videoGrid = document.querySelector('.video-grid');
+    
+                let title = 'Trending ' + userSection.charAt(0).toUpperCase() + userSection.slice(1) + ' Videos';
+                let videos = []; // Fetch videos here
+    
+                sectionTitle.innerText = title;
+                videoGrid.innerHTML = videos.map(video => `
+                    <div class="video-card">
+                        <video></video>
+                        <h3>${video.title}</h3>
+                    </div>
+                `).join('');
+            });
+        }
+    </script>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">p0rnrulz</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trending.html">Trending</a></li>
+                <li><a href="newest.html">Newest</a></li>
+                <li><a href="most-viewed.html">Most Viewed</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 class="flicker-element">Trending Videos</h1>
+        <p class="tagline flicker-element">Catch the Hottest Clips</p>
+        <img src="assets/images/neon-image-2.jpg" alt="Neon" class="flicker-element">
+    </section>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

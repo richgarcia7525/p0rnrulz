@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p0rnrulz</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- Google Fonts for Punk/Graffiti -->
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/fonts/DotZeroBasic.ttf" type="text/css">
+    
+    <script>
+        // Check if the user is verified (exists in localStorage)
+        document.addEventListener('DOMContentLoaded', function() {
+            const ageVerified = localStorage.getItem('ageVerified');
+            const userSection = localStorage.getItem('userSection');
+
+            // Redirect to age verification if not verified
+            if (!ageVerified || !userSection) {
+                window.location.href = 'age-verification.html';
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <nav class="navbar">
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trending.html">Trending</a></li>
+            <li><a href="newest.html">Newest</a></li>
+            <li><a href="most-viewed.html">Most Viewed</a></li>
+            <li><a href="#join-rebellion">Join the Rebellion</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1 class="site-title">
+                <span class="zero">p</span><span class="flicker">0</span>rnrulz
+            </h1>
+            <p class="tagline">Zero F$@#!'s Given</p>
+            <div class="hero-btns">
+                <a href="trending.html" class="hero-btn neon-button">Explore</a>
+                <a href="#join-rebellion" class="hero-btn neon-button">Join the Rebellion</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Sections (based on user section) -->
+    <section class="videos-section">
+        <div class="section-title">
+            <h2>Trending Videos</h2>
+            <div class="neon-line trending-line"></div>
+        </div>
+        <div class="video-grid">
+            <!-- Placeholder Video -->
+            <div class="video-card">
+                <video controls width="300">
+                    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>Big Buck Bunny</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join the Rebellion Section -->
+    <section id="join-rebellion" class="join-section">
+        <h2>Join the Rebellion</h2>
+        <form id="joinForm">
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <input type="email" id="email" placeholder="Enter Email" required>
+            <button type="submit" class="neon-button">Join Now</button>
+        </form>
+    </section>
+
+    <!-- Reset Age Verification (for testing) -->
+    <button onclick="resetVerification()">Reset Age Verification</button>
+
+    <script>
+        function resetVerification() {
+            localStorage.removeItem('ageVerified');
+            localStorage.removeItem('userSection');
+            window.location.href = 'age-verification.html';
+        }
+    </script>
+
+    <script src="./assets/js/scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+License
+README.md
+setup.py
+xnxx_api.egg-info/PKG-INFO
+xnxx_api.egg-info/SOURCES.txt
+xnxx_api.egg-info/dependency_links.txt
+xnxx_api.egg-info/entry_points.txt
+xnxx_api.egg-info/requires.txt
+xnxx_api.egg-info/top_level.txt
