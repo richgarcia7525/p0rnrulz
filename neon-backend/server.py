@@ -1,14 +1,14 @@
 from flask import Flask, jsonify
 import sys
 sys.path.append('./xnxx_api')
-from xnxx_api import Client
+from xnxx_api.xnxx_api import Client
 
 app = Flask(__name__)
 
 client = Client()
 
 @app.route('/video/<string:video_id>', methods=['GET'])
-def get_video_info(video_id):
+def  get_video_info(video_id):
     try:
         url = f"https://www.xnxx.com/video-{video_id}"
         video = client.get_video(url)

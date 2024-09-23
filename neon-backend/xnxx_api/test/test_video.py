@@ -2,8 +2,8 @@ import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
 
-from ..base_api.modules.download import FFMPEG
-from ..base_api.modules.quality import Quality
+from xnxx_api.base_api import FFMPEG
+from ..base_api import Quality
 from xnxx_api import Client, Video
 
 url = "https://www.xnxx.com/video-1b9bufc9/die_zierliche_stieftochter_passt_kaum_in_den_mund_ihres_stiefvaters"

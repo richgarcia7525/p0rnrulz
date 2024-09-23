@@ -102,6 +102,18 @@ def get_base_html(self):
         return segments
 
     def download(self, quality, path, downloader, callback=Callback.text_progress_bar):
+        """
+        Downloads the video with the specified quality and saves it to the given path.
+
+        Args:
+            quality (str): The desired quality of the video to download.
+            path (str): The file path where the video will be saved.
+            downloader (object): The downloader instance to use for downloading the video.
+            callback (function, optional): A callback function to track the download progress. Defaults to Callback.text_progress_bar.
+
+        Returns:
+            None
+        """
         Core().download(video=self, quality=quality, path=path, callback=callback, downloader=downloader)
 
     @cached_property
