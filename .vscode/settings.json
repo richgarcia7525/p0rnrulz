@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./neon-backend/xnxx_api"
+    ]
+}

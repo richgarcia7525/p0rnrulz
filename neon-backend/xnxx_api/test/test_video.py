@@ -1,5 +1,11 @@
-from ..xnxx_api import Video
-from base_api.modules.quality import Quality
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
+
+from ..base_api.modules.download import FFMPEG
+from ..base_api.modules.quality import Quality
+from xnxx_api import Client, Video
+
 url = "https://www.xnxx.com/video-1b9bufc9/die_zierliche_stieftochter_passt_kaum_in_den_mund_ihres_stiefvaters"
 # This will be the URL for all tests
 
@@ -7,6 +13,15 @@ video = Video(url)
 
 
 def test_video_title():
+    """
+    Test the title attribute of the video object.
+
+    This test checks if the title attribute of the video object is a non-empty string.
+
+    Assertions:
+        - The title should be an instance of str.
+        - The length of the title should be greater than 0.
+    """
     title = video.title
     assert isinstance(title, str) and len(title) > 0
 

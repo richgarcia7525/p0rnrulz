@@ -1,5 +1,7 @@
 from flask import Flask, jsonify
-from xnxx_api.xnxx_api import Client
+import sys
+sys.path.append('./xnxx_api')
+from xnxx_api import Client
 
 app = Flask(__name__)
 
